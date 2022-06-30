@@ -1,19 +1,32 @@
-let i, output,int
+let i, output,int,mult,d,s,numb
 
-const Intput = prompt("Ingresa un numero para multiplicarlo")
+const Intput = prompt("Ingresa un numero para saber tus numeros de la suerte")
 
 int = parseInt(Intput)
+numb = 0
 
 if(int !== 0){
-    while(int>0){
-        for(i = 0; i <=100; i++){
-            output = int * i
-        
-            alert(`${int}x${i}=${output}`)
+    for (i = 1; i <= 100; i++){
+        numb++ //
+
+        if (numb > 5) { 
+            mult = numb * int
+            d = mult % 10
+            s = mult - d * i
+            output = s + d
+
+            console.log(output)
+
+            alert("El numero de la suerte es: " + output)
+            break;
+        } else {
+            alert("Tu suerte es pesima, no se para que lo intentas.")
         }
-        break;
     }
 }else{
-    alert("No puedes multiplicar 0!")
+    alert("No puedes poner 0!")
+
+    // recargo la pagina, y le vuelvo a preguntar al usuario.
+    window.location.reload()
 }
 
