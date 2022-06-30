@@ -1,6 +1,6 @@
 let i, output,int,mult,d,s,numb
 
-const Intput = prompt("Ingresa un numero para saber tus numeros de la suerte")
+const Intput = prompt("Ingresa un numero para saber tu numero de la suerte")
 
 int = parseInt(Intput)
 numb = 0
