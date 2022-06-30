@@ -19,9 +19,9 @@ if(int !== 0){
 
             alert("El numero de la suerte es: " + output)
             break;
-        } else {
-            alert("Tu suerte es pesima, no se para que lo intentas.")
-        }
+        } 
+        
+        alert("Tu suerte es pesima, no se para que lo intentas.")
     }
 }else{
     alert("No puedes poner 0!")
