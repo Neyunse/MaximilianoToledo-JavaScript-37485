@@ -1,23 +1,13 @@
-let productID, sale, ouput, priceProduct, saleOuput, productTax, stock, maxStock, format, formated
+let productID, priceProduct, saleOuput, productTax, maxStock
 
 maxStock = 3
 
 const Intput = parseInt(prompt("¿Cuantos productos quieres?"))
 
-
-function Format(price){
-    // Acomoda el precio, de forma que sea mas visible y entendible
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat
-    format = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(price)
-
-}
-
-
 function Price(price, size, tax=64, sale=50) {
     productTax = price * tax
     priceProduct = price + productTax
     saleOuput = priceProduct - sale
-    formated = Format(saleOuput)
 
     if (size == maxStock){ // Si el usuario ingreso mas de 3
 
@@ -31,7 +21,7 @@ function Price(price, size, tax=64, sale=50) {
         TAX: ${tax}%
         Cantidad: ${size}
         Descuento: ${sale}%
-        TOTAL: ${formated}
+        TOTAL: ${saleOuput}
         `)
         
         console.log(`
@@ -39,7 +29,7 @@ function Price(price, size, tax=64, sale=50) {
         TAX: ${tax}%
         Cantidad: ${size}
         Descuento: ${sale}%
-        TOTAL: ${formated}
+        TOTAL: ${saleOuput}
         `)
     }
 }
