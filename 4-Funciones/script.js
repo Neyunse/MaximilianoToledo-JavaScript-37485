@@ -1,19 +1,27 @@
-let productID, sale, ouput, priceProduct, saleOuput, productTax, stock, maxStock
+let productID, sale, ouput, priceProduct, saleOuput, productTax, stock, maxStock, format, formated
 
 maxStock = 3
 
 const Intput = parseInt(prompt("¿Cuantos productos quieres?"))
 
 
+function Format(price){
+    format = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(price)
+
+}
+
+
 function Price(price, size, tax=64, sale=50) {
     productTax = price * tax
     priceProduct = price + productTax
     saleOuput = priceProduct - sale
+    formated = Format(saleOuput)
 
-    if (size > maxStock){ // Si el usuario ingreso mas de 3
+    if (size >= maxStock){ // Si el usuario ingreso mas de 3
 
         alert("No hay suficiente Stock para este producto")
-        
+        // recargo la pagina, y le vuelvo a preguntar al usuario.
+        window.location.reload()
     }else{
 
         alert(`
@@ -21,7 +29,7 @@ function Price(price, size, tax=64, sale=50) {
         TAX: ${tax}%
         Cantidad: ${size}
         Descuento: ${sale}%
-        TOTAL: ${saleOuput}
+        TOTAL: ${formated}
         `)
         
         console.log(`
@@ -29,7 +37,7 @@ function Price(price, size, tax=64, sale=50) {
         TAX: ${tax}%
         Cantidad: ${size}
         Descuento: ${sale}%
-        TOTAL: ${saleOuput}
+        TOTAL: ${formated}
         `)
     }
 }
