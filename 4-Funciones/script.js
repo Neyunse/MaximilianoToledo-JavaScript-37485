@@ -6,6 +6,8 @@ const Intput = parseInt(prompt("¿Cuantos productos quieres?"))
 
 
 function Format(price){
+    // Acomoda el precio, de forma que sea mas visible y entendible
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat
     format = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(price)
 
 }
