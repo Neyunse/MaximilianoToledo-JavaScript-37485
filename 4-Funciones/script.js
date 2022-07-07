@@ -9,3 +9,5 @@ const TAX = x => x * 0.64
 function Price(id) {
     console.log(TAX(20))
 }
+
+Price(productID);
