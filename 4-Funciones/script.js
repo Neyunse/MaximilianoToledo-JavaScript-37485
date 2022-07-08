@@ -9,7 +9,7 @@ function Price(price, size, tax=64, sale=50) {
     priceProduct = price + productTax
     saleOuput = priceProduct - sale
 
-    if (size == maxStock){ // Si el usuario ingreso mas de 3
+    if (size >= maxStock){ // Si el usuario ingreso mas de 3
 
         alert("No hay suficiente Stock para este producto")
         // recargo la pagina, y le vuelvo a preguntar al usuario.
