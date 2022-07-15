@@ -6,7 +6,7 @@ max = 7
 
 
 do {
-      input = parseInt(prompt("Ingresa numeros (no se puede repetir) "))
+      input = parseInt(prompt("Ingresa numeros"))
       
       array.push(input)
       console.log(array)
