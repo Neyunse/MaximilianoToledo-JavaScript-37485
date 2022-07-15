@@ -1,0 +1,117 @@
+body{
+      background-color: #160d2e;
+}
+
+
+.container{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.App{
+      display: grid;
+      grid-area: 1fr 2fr 1fr;
+      grid-template-areas: 
+      "sidebar timeline aside";
+      
+      gap: 5px;
+      
+}
+
+.Sidebar ul, aside div,.entry__card{
+      
+      border-radius: 1rem;
+      background-color: #1b1d2a;
+      color: aliceblue;
+}
+
+
+.Sidebar{
+      grid-area: sidebar;
+      width: 232px;
+      height: 100vh;
+      overflow: hidden;
+      top: 2px;
+      position: sticky;
+}
+
+.Sidebar ul li{
+      width: 100%;
+      padding: 10px;
+      border-radius: 1rem;
+}
+.Sidebar ul li:hover{
+      background-color: #47474d;
+}
+
+.Timeline{
+      width: 608px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+}
+aside{
+      grid-area: aside;
+      width: 238px;
+      position: sticky;
+      top: 2px;
+      height: 100vh;
+      overflow: hidden;
+}
+
+.entry__card{
+      padding: 7px;
+}
+.header{
+      display: flex;
+      justify-content: space-between;
+
+}
+.header .h__l{
+      display: flex;
+      gap: 5px;
+}
+
+.header .h__l .av img{
+      width: 100%;
+      height: 100%;
+}
+
+.header .h__l .av{
+      width: 48px;
+      height: 48px;
+}
+.header .us{
+      display: flex;
+      flex-direction: column;
+}
+.header .us .name{
+      font-weight: bold;
+}
+
+.body{
+      padding: 7px;
+}
+
+.footer{
+      display: flex;
+      gap: 6px;
+      padding: 7px;
+}
+.footer span{
+      color: rgb(164, 165, 168);
+      padding: 4px;
+      border-radius: 4px;
+}
+
+.footer span:nth-child(2):hover{
+      background-color: #3c3d3e;
+      cursor: pointer;
+      
+}
+.footer span:nth-child(3):hover{
+      background-color: #3c3d3e;
+      cursor: pointer;
+}
