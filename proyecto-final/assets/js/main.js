@@ -60,6 +60,21 @@ function UpdateMG(id) { // Consigue la id de la entrada
     console.log(entries[Get]) // Retorna la entrada actualizada
 }
 
+function Delete(objPos) {
+
+    /*
+    
+    Optimizado para uso de consola...
+
+    Abrir consola del navegador y escribir Delete, luego pasarle la posicion del objeto: [0,1]
+
+    
+    */
+    
+    entries.splice(objPos); // Remueve el objeto
+
+    console.log(entries) // Retorna la lista actualizada
+}
 
 
 entries.map((e, i) => {
