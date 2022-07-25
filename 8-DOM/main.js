@@ -37,7 +37,7 @@ for (const e of data){
 
 
 if(personList){ // Comprueba si el ul existe, luego incluye los items.
-    persons.map((e, i) => {
-        personList.innerHTML+=`<li data-id="${i}">${p.name}</li>`
+    persons.map((per, i) => {
+        personList.innerHTML+=`<li data-id="${i}">${per.name}</li>`
     })
 }
