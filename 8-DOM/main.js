@@ -1,0 +1,43 @@
+let persons, personList, data
+
+personList = document.querySelector(".list")
+
+
+persons = []
+
+
+data = [
+    {
+        name: "Julian"    
+    },
+    {
+        name: "Karina"    
+    },
+    {
+        name: "Ana"    
+    },
+    {
+        name: "Valeria"    
+    },
+    {
+        name: "Tereza"    
+    }
+]
+
+function P(data) {
+
+    this.id = data.name
+
+    return this
+}
+
+for (const e of data){
+    persons.push(new P(e))
+}
+
+
+if(personList){ // Comprueba si el ul existe, luego incluye los items.
+    persons.map((e, i) => {
+        personList.innerHTML+=`<li data-id="${i}">${p.name}</li>`
+    })
+}
