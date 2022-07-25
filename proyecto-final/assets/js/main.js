@@ -1,4 +1,6 @@
-let container, data, entries
+let container, data, entries, Timeline
+
+Timeline = document.querySelector(".Timeline")
 
 
 entries = []
@@ -78,5 +80,37 @@ function Delete(objPos) {
 
 
 entries.map((e, i) => {
+
+    Timeline.innerHTML += `
+        <div data-id="${e.id}" class="entry__card">
+            <article class="entry">
+                <div class="header">
+                    <div class="h__l">
+                        <div class="av">
+                            <img src="${e.avatar}" lazy="loaded">
+                        </div>
+                        <div class="us">
+                            <span class="name">${e.name}</span>
+                            <span class="tag">@${e.tag}</span>
+                        </div>
+                    </div>
+                    <div class="h__r">
+                        <button class="kg__button kg-danger">Follow</button>
+                    </div>
+                </div>
+
+                <div class="body">
+                    <p>${e.body}</p>
+                </div>
+
+                <div class="footer">
+                    <span><i class="fa-solid fa-eye"></i> ${e.views}</span>
+                    <span><i class="fa-solid fa-comment-dots"></i> ${e.comments}</span>
+                    <span><i class="fa-solid fa-heart"></i> ${e.mg}</span>
+               
+                </div>
+            </article>
+        </div>
+    `
     console.log(e)
 })
