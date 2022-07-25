@@ -2,9 +2,7 @@ let persons, personList, data
 
 personList = document.querySelector(".list")
 
-
 persons = []
-
 
 data = [
     {
