@@ -69,9 +69,9 @@ function NewContent(body) {
 
     let ldata = {
         id: randomID,
-        avatar: "https://img-os-static.hoyolab.com/avatar/avatar30029.png",
-        name: "Genshin Impact Official",
-        tag: "test",
+        avatar: "https://picsum.photos/seed/picsum/200/300",
+        name: "Erik",
+        tag: "erik_2312",
         body: `${body}`,
         image: img ? img : null, // Si hay imagen, la guarda, si no, guarda null
         views: 0,
@@ -124,7 +124,13 @@ function Delete(objPos) {
 }
 
 
-entries.map((e, i) => { // Recorro la lista
+const sortedDesc = entries.reverse(); // Ordena los objetos en orden descendente
+
+
+sortedDesc.map((e, i) => { // Recorro la lista
+
+
+    let mghot = e.mg > 100 ? "🔥" : "" // Si el mg es mayor a 100, le añade la clase hot
 
     if (e.image != null) { // Si la imagen no es null
     
@@ -141,7 +147,8 @@ entries.map((e, i) => { // Recorro la lista
                                 <span class="tag">@${e.tag}</span> 
                             </div>
                         </div>
-                        
+                            
+                        <span>${mghot}</span>
                     </div>
     
                     <div class="body">
@@ -173,7 +180,9 @@ entries.map((e, i) => { // Recorro la lista
                             <span class="name">${e.name}</span>
                             <span class="tag">@${e.tag}</span> 
                         </div>
+                        
                     </div>
+                    <span>${mghot}</span>
                     
                 </div>
 

@@ -88,6 +88,8 @@ aside {
 .header .h__l .av {
       width: 48px;
       height: 48px;
+      overflow: hidden;
+      border-radius: 25px;
 }
 
 .header .us {
