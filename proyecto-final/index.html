@@ -27,7 +27,16 @@
                 <section class="Timeline">
                     <div class="input__container">
                         <textarea class="new__conter" placeholder="¿Que tal tu dia?" name="" id="" cols="30" rows="10"></textarea>
-                        <button class="kg__button kg-primary postButton">Post</button>
+                        <div class="cont__send">
+                            <button class="kg__button kg-primary postButton">Post</button>
+                            <div class="image-upload">
+                                <label for="file-input">
+                                    <i class="fa-solid fa-image"></i>
+                                </label>
+                              
+                                <input id="file-input" type="file"  />
+                              </div>
+                        </div>
                     </div>
                     <div class="timeline__content" data-timeline></div>
                 </section>
