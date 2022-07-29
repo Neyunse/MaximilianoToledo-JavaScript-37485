@@ -106,12 +106,44 @@ aside{
       border-radius: 4px;
 }
 
-.footer span:nth-child(2):hover{
-      background-color: #3c3d3e;
-      cursor: pointer;
-      
-}
+
 .footer span:nth-child(3):hover{
       background-color: #3c3d3e;
       cursor: pointer;
 }
+.footer span:nth-child(4):hover{
+      background-color: #3c3d3e;
+      cursor: pointer;
+}
+.input__container {
+      background: #1b1d2a;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+.new__conter{
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      min-height: 33px;
+      max-height: 108px;
+      height: 33px;
+      resize: none;
+      background: transparent;
+      border: 0px;
+      outline: none;
+      color: white;
+}
+.new__conter:focus{
+      border-bottom: 1px solid #ffffff52;
+}
+
+
+.timeline__content{
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }

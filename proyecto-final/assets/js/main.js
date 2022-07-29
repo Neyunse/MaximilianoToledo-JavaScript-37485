@@ -1,33 +1,25 @@
-let container, data, entries, Timeline
+let container, data, entries, Timeline, getInput, getButtonPost, getAllEntries
 
-Timeline = document.querySelector(".Timeline")
-
+Timeline = document.querySelector(".timeline__content")
+getInput = document.querySelector(".new__conter")
+getButtonPost = document.querySelector(".postButton")
+getAllEntries = document.querySelectorAll(".entry__card")
 
 entries = []
 
-// FROM DB
-data = [
-    {
-    id:1,
-    avatar: "https://img-os-static.hoyolab.com/avatar/avatar30029.png",
-    name: "Genshin Impact Official",
-    tag: "test",
-    body: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi ipsa laudantium deserunt ullam amet nemo ipsam sed deleniti, perferendis, quod quae dolorum illo repudiandae possimus tempore! Maiores qui voluptatum dolorum.`,
-    views: 0,
-    comments: 0,
-    mg: 0
-    },
-    {
-        id:2,
-        avatar: "https://img-os-static.hoyolab.com/avatar/avatar30029.png",
-        name: "Genshin Impact Official",
-        tag: "test",
-        body: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi ipsa laudantium deserunt ullam amet nemo ipsam sed deleniti, perferendis, quod quae dolorum illo repudiandae possimus tempore! Maiores qui voluptatum dolorum.`,
-        views: 0,
-        comments: 0,
-        mg: 0
+data = []
+
+console.log(getAllEntries)
+
+
+
+
+if (localStorage.getItem("entries") != null) { // Si hay algo en el localStorage
+    data = JSON.parse(localStorage.getItem("entries")) // Lo parseamos a JSON
+    for (let i = 0; i < data.length; i++) { // Recorremos el array
+        entries.push(data[i]) // Lo añadimos al array entries
     }
-]
+}
 
 function Entry(data) {
 
@@ -42,44 +34,76 @@ function Entry(data) {
 
     return this
 }
+//cargo los datos de la db
+// for (const e of data) {
+//     entries.push(new Entry(e))
+// }
 
-for (const e of data){
-    entries.push(new Entry(e))
+// Genera una ID aleatoria del post del usuario
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
 
+// nuevo contenido
+
+function NewContent(body) { 
+    
+    let randomID = getRandomInt(1000) // Genera una ID aleatoria
+    
+    // Creo un nuevo objeto local
+
+    let ldata = {
+        id: randomID,
+        avatar: "https://img-os-static.hoyolab.com/avatar/avatar30029.png",
+        name: "Genshin Impact Official",
+        tag: "test",
+        body: `${body}`,
+        views: 0,
+        comments: 0,
+        mg: 0
+    }
+
+    entries.push(new Entry(ldata)) // Lo añado a la lista
+
+    localStorage.setItem("entries", JSON.stringify(entries)) // Lo guardo en el localStorage
+    window.location.reload() // Recarga la pagina
+}
+
+
+getButtonPost.addEventListener("click", () => { 
+    if (getInput.value != "") { // Si el input no esta vacio
+        NewContent(getInput.value) // Crea un nuevo contenido
+        getInput.value = "" // Limpia el input
+    } else {
+        alert("El input esta vacio!")
+    }
+})
+
+
+
+
+
 function UpdateMG(id) { // Consigue la id de la entrada
-    /*
+
+    let objPos = entries.findIndex(e => e.id == id) // Busca la posicion del objeto
+    let obj = entries[objPos] // Obtiene el objeto
+    obj.mg++ // Incrementa el mg
+    entries[objPos] = obj // Actualiza el objeto
+    localStorage.setItem("entries", JSON.stringify(entries)) // Lo guarda en el localStorage
+    window.location.reload() // Recarga la pagina
+
     
-    Optimizado para uso de consola...
-
-    Abrir consola del navegador y escribir UpdateMG, luego pasarle una id (1 o 2)
-
-    
-    */
-    let Get = entries.findIndex((obj => obj.id == id)); // Busco el objeto que tenga la id, indexOf no me servia para esto.
-    entries[Get].mg += 1 // Le añade +1
-
-    console.log(entries[Get]) // Retorna la entrada actualizada
 }
 
 function Delete(objPos) {
-
-    /*
-    
-    Optimizado para uso de consola...
-
-    Abrir consola del navegador y escribir Delete, luego pasarle la posicion del objeto: [0,1]
-
-    
-    */
-    
-    entries.splice(objPos); // Remueve el objeto
-
-    console.log(entries) // Retorna la lista actualizada
+    let obj = entries.findIndex(e => e.id == objPos) // Busca la posicion del objeto
+    entries.splice(obj, 1) // Elimina el objeto
+    localStorage.setItem("entries", JSON.stringify(entries)) // Lo guarda en el localStorage
+    window.location.reload() // Recarga la pagina
 }
 
 
-entries.map((e, i) => {
+entries.map((e, i) => { // Recorro la lista
 
     Timeline.innerHTML += `
         <div data-id="${e.id}" class="entry__card">
@@ -91,12 +115,10 @@ entries.map((e, i) => {
                         </div>
                         <div class="us">
                             <span class="name">${e.name}</span>
-                            <span class="tag">@${e.tag}</span>
+                            <span class="tag">@${e.tag}</span> 
                         </div>
                     </div>
-                    <div class="h__r">
-                        <button class="kg__button kg-danger">Follow</button>
-                    </div>
+                    
                 </div>
 
                 <div class="body">
@@ -106,11 +128,12 @@ entries.map((e, i) => {
                 <div class="footer">
                     <span><i class="fa-solid fa-eye"></i> ${e.views}</span>
                     <span><i class="fa-solid fa-comment-dots"></i> ${e.comments}</span>
-                    <span><i class="fa-solid fa-heart"></i> ${e.mg}</span>
+                    <span onclick='UpdateMG(${e.id})' data-mg><i class="fa-solid fa-heart"></i> ${e.mg}</span>
+                    <span onclick='Delete(${e.id})' data-mg><i class="fa-solid fa-trash-can"></i></span>
                
                 </div>
             </article>
         </div>
     `
-    console.log(e)
+   
 })

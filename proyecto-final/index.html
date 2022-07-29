@@ -9,11 +9,11 @@
         <title>Document</title>
         <link rel="stylesheet" href="./assets/css/style.css">
         <script src="https://kit.fontawesome.com/1eb6b2e788.js" crossorigin="anonymous"></script>
+        <script src="./assets/js/main.js" defer></script>
     </head>
 
     <body>
         <main class="container">
-
             <div class="App">
                 <section class="Sidebar">
                     <ul>
@@ -24,13 +24,19 @@
                     </ul>
                 </section>
                 
-                <section class="Timeline" data-timeline></section>
+                <section class="Timeline">
+                    <div class="input__container">
+                        <textarea class="new__conter" placeholder="¿Que tal tu dia?" name="" id="" cols="30" rows="10"></textarea>
+                        <button class="kg__button kg-primary postButton">Post</button>
+                    </div>
+                    <div class="timeline__content" data-timeline></div>
+                </section>
 
                 <aside>
                     <div>.</div>
                 </aside>
             </div>
         </main>
-        <script src="./assets/js/main.js"></script>
+        
     </body>
 </html>
