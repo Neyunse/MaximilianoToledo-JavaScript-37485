@@ -130,7 +130,7 @@ const sortedDesc = entries.reverse(); // Ordena los objetos en orden descendente
 sortedDesc.map((e, i) => { // Recorro la lista
 
 
-    let mghot = e.mg > 100 ? "🔥" : "" // Si el mg es mayor a 100, le añade la clase hot
+    let mghot = e.mg > 100 ? "🔥" : "" // Si el mg es mayor a 100, le añade un emoji
 
     if (e.image != null) { // Si la imagen no es null
     
