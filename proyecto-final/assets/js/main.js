@@ -131,6 +131,8 @@ const sortedDesc = entries.sort((a,b) =>  new Date(b.date) - new Date(a.date)); 
 
 sortedDesc.map((e, i) => { // Recorro la lista
 
+    let date = moment(e.date).fromNow() // Obtiene la fecha actual del objeto
+
 
     let mghot = e.mg > 100 ? "🔥" : "" // Si el mg es mayor a 100, le añade un emoji
 
@@ -145,7 +147,7 @@ sortedDesc.map((e, i) => { // Recorro la lista
                                 <img src="${e.avatar}" lazy="loaded">
                             </div>
                             <div class="us">
-                                <span class="name">${e.name}</span>
+                                <span class="name">${e.name} - ${date}</span>
                                 <span class="tag">@${e.tag}</span> 
                             </div>
                         </div>
@@ -179,7 +181,7 @@ sortedDesc.map((e, i) => { // Recorro la lista
                             <img src="${e.avatar}" lazy="loaded">
                         </div>
                         <div class="us">
-                            <span class="name">${e.name}</span>
+                            <span class="name">${e.name} - ${date}</span>
                             <span class="tag">@${e.tag}</span> 
                         </div>
                         
