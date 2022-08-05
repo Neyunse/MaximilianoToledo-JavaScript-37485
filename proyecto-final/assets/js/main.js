@@ -43,6 +43,7 @@ function Entry(data) {
     this.avatar = data.avatar
     this.name = data.name
     this.tag = data.tag
+    this.date = data.date
     this.body = data.body
     this.image = data.image
     this.views = data.views
@@ -72,6 +73,7 @@ function NewContent(body) {
         avatar: "https://picsum.photos/seed/picsum/200/300",
         name: "Erik",
         tag: "erik_2312",
+        date: new Date(),
         body: `${body}`,
         image: img ? img : null, // Si hay imagen, la guarda, si no, guarda null
         views: 0,
@@ -105,7 +107,7 @@ getButtonPost.addEventListener("click", () => {
 
 // Añade mg a una entrada
 function UpdateMG(id) { // Consigue la id de la entrada
-
+    let data = JSON.parse(localStorage.getItem("entries")) // Recupera el localStorage
     let objPos = entries.findIndex(e => e.id == id) // Busca la posicion del objeto
     let obj = entries[objPos] // Obtiene el objeto
     obj.mg++ // Incrementa el mg
@@ -124,7 +126,7 @@ function Delete(objPos) {
 }
 
 
-const sortedDesc = entries.reverse(); // Ordena los objetos en orden descendente
+const sortedDesc = entries.sort((a,b) =>  new Date(b.date) - new Date(a.date)); // Ordena los objetos en orden descendente
 
 
 sortedDesc.map((e, i) => { // Recorro la lista
