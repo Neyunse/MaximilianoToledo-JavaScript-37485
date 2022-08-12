@@ -1,0 +1,38 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+html,body{
+      width: 100vmax;
+      height: 100vh;
+}
+
+body{
+      background: #f5f5f5;
+}
+
+.countDownDate,.clock{
+      gap: 6px;
+}
+.days,.hours,.minutes,.seconds{
+      gap:3px;
+}
+.countDownDate,.clock,.days,.hours,.minutes,.seconds{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+}
+
+.number{
+      background: aqua;
+      padding: 13px;
+      font-size: 67px;
+      border-radius: 10px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+.separer{
+      padding: 13px;
+      font-size: 67px;
+}
