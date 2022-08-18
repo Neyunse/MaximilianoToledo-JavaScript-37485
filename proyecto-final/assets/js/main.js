@@ -28,13 +28,18 @@ function readFile() {
   }
 
 
-
+let contador = document.querySelector("contador")
+contador.innerText=0
 // Funcion que recupera los datos del localStorage
 if (localStorage.getItem("entries") != null) { // Si hay algo en el localStorage
     data = JSON.parse(localStorage.getItem("entries")) // Lo parseamos a JSON
     for (let i = 0; i < data.length; i++) { // Recorremos el array
         entries.push(data[i]) // Lo añadimos al array entries
     }
+
+
+    
+    contador.innerText=carrito.length;
 }
 
 function Entry(data) {
