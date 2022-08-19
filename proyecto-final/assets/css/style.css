@@ -1,187 +1,176 @@
 body {
-      background-color: #160d2e;
+  background-color: #160d2e;
 }
 
-
 .container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
-      display: grid;
-      grid-area: 1fr 2fr 1fr;
-      grid-template-areas:
-            "sidebar timeline aside";
+  display: grid;
+  grid-area: 1fr 2fr 1fr;
+  grid-template-areas: "sidebar timeline aside";
 
-      gap: 5px;
-
+  gap: 5px;
 }
 
 .Sidebar ul,
 aside div,
 .entry__card {
-
-      border-radius: 1rem;
-      background-color: #1b1d2a;
-      color: aliceblue;
+  border-radius: 1rem;
+  background-color: #1b1d2a;
+  color: aliceblue;
 }
 
-
 .Sidebar {
-      grid-area: sidebar;
-      width: 232px;
-      height: 100vh;
-      overflow: hidden;
-      top: 2px;
-      position: sticky;
+  grid-area: sidebar;
+  width: 232px;
+  height: 100vh;
+  overflow: hidden;
+  top: 2px;
+  position: sticky;
 }
 
 .Sidebar ul li {
-      width: 100%;
-      padding: 10px;
-      border-radius: 1rem;
+  width: 100%;
+  padding: 10px;
+  border-radius: 1rem;
 }
 
 .Sidebar ul li:hover {
-      background-color: #47474d;
+  background-color: #47474d;
 }
 
 .Timeline {
-      width: 608px;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
+  width: 608px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
 }
 
 aside {
-      grid-area: aside;
-      width: 238px;
-      position: sticky;
-      top: 2px;
-      height: 100vh;
-      overflow: hidden;
+  grid-area: aside;
+  width: 238px;
+  position: sticky;
+  top: 2px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .entry__card {
-      padding: 7px;
+  padding: 7px;
 }
 
 .header {
-      display: flex;
-      justify-content: space-between;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .header .h__l {
-      display: flex;
-      gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .header .h__l .av img {
-      width: 100%;
-      height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header .h__l .av {
-      width: 48px;
-      height: 48px;
-      overflow: hidden;
-      border-radius: 25px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 25px;
 }
 
 .header .us {
-      display: flex;
-      flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .header .us .name {
-      font-weight: bold;
+  font-weight: bold;
 }
 
 .body {
-      padding: 7px;
+  padding: 7px;
 }
 
 .footer {
-      display: flex;
-      gap: 6px;
-      padding: 7px;
+  border-top: 1px solid #8080803b;
+  display: flex;
+  gap: 6px;
+  padding: 7px;
 }
 
 .footer span {
-      color: rgb(164, 165, 168);
-      padding: 4px;
-      border-radius: 4px;
+  color: rgb(164, 165, 168);
+  padding: 4px;
+  border-radius: 4px;
 }
 
-
-.footer span:nth-child(3):hover {
-      background-color: #3c3d3e;
-      cursor: pointer;
-}
-
-.footer span:nth-child(4):hover {
-      background-color: #3c3d3e;
-      cursor: pointer;
+.footer span:hover {
+  background-color: #3c3d3e;
+  cursor: pointer;
 }
 
 .input__container {
-      background: #1b1d2a;
-      overflow: hidden;
-      border-radius: 18px;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+  background: #1b1d2a;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .new__conter {
-      width: 100%;
-      max-width: 100%;
-      min-width: 100%;
-      min-height: 33px;
-      max-height: 108px;
-      height: 33px;
-      resize: none;
-      background: transparent;
-      border: 0px;
-      outline: none;
-      color: white;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 33px;
+  max-height: 108px;
+  height: 33px;
+  resize: none;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  color: white;
 }
 
 .new__conter:focus {
-      border-bottom: 1px solid #ffffff52;
+  border-bottom: 1px solid #ffffff52;
 }
-
 
 .timeline__content {
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
 }
 
-.image-upload>input {
-      display: none;
+.image-upload > input {
+  display: none;
 }
 
 .cont__send {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
 }
 
-.image-upload>label {
-      color: rgb(241, 8, 105);
-      cursor: pointer;
+.image-upload > label {
+  color: rgb(241, 8, 105);
+  cursor: pointer;
 }
 
 .post__image {
-      width: 100%;
-      border-radius: 20px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

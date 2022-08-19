@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@kagarisoft/csc@1.2.6/dist/css/common.min.css"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/1eb6b2e788.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/posts.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@kagarisoft/csc@1.2.6/dist/css/common.min.css">
-        <title>Document</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <script src="https://kit.fontawesome.com/1eb6b2e788.js" crossorigin="anonymous"></script>
-        <script src="./assets/js/main.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
-    </head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+      defer
+    ></script>
+  </head>
 
-    <body>
-        <main class="container">
-            <div class="App">
-                <section class="Sidebar">
-                    <ul>
-                        <li>Inicio</li>
-                        <li>Notificaciones</li>
-                        <li>Mensajes</li>
-                        <li>Perfil</li>
-                    </ul>
-                </section>
-                
-                <section class="Timeline">
-                    <div class="input__container">
-                        <textarea class="new__conter" placeholder="¿Que tal tu dia?" name="" id="" cols="30" rows="10"></textarea>
-                        <div class="cont__send">
-                            <button class="kg__button kg-primary postButton">Post</button>
-                            <div class="image-upload">
-                                <label for="file-input">
-                                    <i class="fa-solid fa-image"></i>
-                                </label>
-                              
-                                <input id="file-input" type="file"  />
-                              </div>
-                        </div>
-                    </div>
-                    <div class="timeline__content" data-timeline></div>
-                </section>
+  <body>
+    <main class="container">
+      <div class="App">
+        <section class="Sidebar">
+          <ul>
+            <li>Inicio</li>
+            <li>Notificaciones</li>
+            <li>Mensajes</li>
+            <li>Perfil</li>
+          </ul>
+        </section>
 
-                <aside>
-                    <div>.</div>
-                </aside>
+        <section class="Timeline">
+          <div class="input__container">
+            <textarea
+              class="new__conter"
+              placeholder="¿Que tal tu dia?"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <div class="cont__send">
+              <button class="kg__button kg-primary postButton">Post</button>
+              <br />
             </div>
-        </main>
-        
-    </body>
+          </div>
+          <div class="timeline__content" data-timeline></div>
+        </section>
+
+        <aside>
+          <div>.</div>
+        </aside>
+      </div>
+    </main>
+  </body>
 </html>
