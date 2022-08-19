@@ -25,14 +25,13 @@ async function entr() {
         ? JSON.parse(localStorage.getItem("entries"))
         : []; // Si hay algo en el localStorage lo parseamos a JSON
 
-      const l = localData.map((e) => e); 
-      const m = data.map((i) => i); 
+      const l = localData.map((e) => e);
+      const m = data.map((i) => i);
 
       return [...l, ...m]; // Concatena los dos arrays
     })
     .then((m) => {
-
-      const sortedDesc = m.sort((a, b) => new Date(b.date) - new Date(a.date)); 
+      const sortedDesc = m.sort((a, b) => new Date(b.date) - new Date(a.date));
       sortedDesc.map((e, i) => {
         let date = moment(e.date).fromNow(); // Obtiene la fecha actual del objeto
 
@@ -70,8 +69,7 @@ async function entr() {
         </div>
     `;
       });
-    })
-    .catch((err) => console.log(err));
+    });
 }
 entr();
 
