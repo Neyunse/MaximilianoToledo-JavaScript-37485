@@ -18,7 +18,9 @@ if (localStorage.getItem("entries") != null) {
 }
 
 async function entr() {
-  await fetch("/proyecto-final/DB/posts.json") // o fetch("/DB/posts.json")
+  await fetch(
+    "https://raw.githubusercontent.com/Neyunse/MaximilianoToledo-JavaScript-37485/main/proyecto-final/DB/posts.json"
+  ) // o fetch("/DB/posts.json")
     .then((res) => res.json())
     .then((data) => {
       const localData = localStorage.getItem("entries")
