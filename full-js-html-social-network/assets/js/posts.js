@@ -19,7 +19,7 @@ if (localStorage.getItem("entries") != null) {
 
 async function entr() {
   await fetch(
-    "https://raw.githubusercontent.com/Neyunse/MaximilianoToledo-JavaScript-37485/main/full-js-html-social-network/DB/posts.json"
+    "https://neyunse.github.io/MaximilianoToledo-JavaScript-37485/full-js-html-social-network/DB/posts.json"
   ) // o fetch("/DB/posts.json")
     .then((res) => res.json())
     .then((data) => {
